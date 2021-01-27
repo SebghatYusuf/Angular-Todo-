@@ -13,3 +13,14 @@
 
 <h2>Sign UP COMP</h2>
 <app-signup></app-signup>
+
+<!-- Lecture #9 Important Events -->
+
+<h1>Important Events</h1>
+<button (click)="myEvent('this is click event')">Click ME</button>
+<br><br>
+
+<input type="text" #box (keyup.enter)="myEvent(box.value)">
+<br><br>
+
+<input type="text" #box1 (blur)="myEvent(box1.value)">

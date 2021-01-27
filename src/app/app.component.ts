@@ -19,8 +19,8 @@ export class AppComponent {
   siteUrl = window.location;
 
   // lect #9  
-  myEvent() {
-    
+  myEvent(event: any) {
+    console.log(event);
   }
 
 }
