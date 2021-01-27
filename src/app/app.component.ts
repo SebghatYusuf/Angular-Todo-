@@ -7,17 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todo App';
-  name = 'App Name';
 
-  getName (){
-    return this.name;
-  };
+  alertName(name: string) {
+    alert(name);
+  }
+
   obj = {
     name: 'kelly',
-    age : 20, 
+    age: 20,
   };
   siteUrl = window.location;
 
-  
-  
+  // lect #9  
+  myEvent() {
+    
+  }
+
 }
