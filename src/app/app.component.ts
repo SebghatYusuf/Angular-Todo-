@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoApp';
+  title = 'Todo App';
+  name = 'App Name';
+
+  getName (){
+    return this.name;
+  };
+  obj = {
+    name: 'kelly',
+    age : 20, 
+  };
+  siteUrl = window.location;
+
+  
+  
 }
