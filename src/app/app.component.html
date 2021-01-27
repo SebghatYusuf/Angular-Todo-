@@ -1,3 +1,10 @@
+<style>
+  body {
+    font-family: 'Hack';
+  }
+
+</style>
+
 <!-- <h1>Hello World</h1>
 <h2>{{title}}</h2>
 <button (click)='alertName("Sebghat")'> Alert Name </button>
@@ -43,3 +50,28 @@ style="background: skyblue;">Mouse Event</h1> -->
 <input value={{name}} disabled={{disabledBox}} />
 <br><br>
 <button (click)="toggleBox()">TOGGLE BOX</button> -->
+
+
+
+<!-- lecture #12 -->
+<h1>Conditions in ANGULAR</h1>
+<!-- <h2 *ngIf="show=='yes'; then ifBlock else elseBlock"></h2>
+
+<ng-template #ifBlock>
+  <h2>if BLOCK</h2>
+</ng-template>
+<ng-template #elseBlock>
+
+  <h2>else BLOCK</h2>
+</ng-template>
+<button (click)="toggleShow()">Toggle</button> -->
+
+<ng-template [ngIf]="show=='red' ">
+  <h2 style="color: red;">Red</h2>
+</ng-template>
+<ng-template [ngIf]="show=='blue' ">
+  <h2 style="color: blue;">Blue</h2>
+</ng-template>
+<ng-template [ngIf]="show=='green' ">
+  <h2 style="color: green;">Green</h2>
+</ng-template>

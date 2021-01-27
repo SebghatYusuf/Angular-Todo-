@@ -6,12 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = "bruce"
-  disabledBox = true;
+  show = 'blue';
 
-  toggleBox() {
-    this.disabledBox = !this.disabledBox;
+
+  toggleShow() {
+    this.show === '' ? this.show = 'yes' : this.show = '';
   }
+
+  // name = "bruce"
+  // disabledBox = true;
+
+  // toggleBox() {
+  //   this.disabledBox = !this.disabledBox;
+  // }
 
   // title = 'Todo App';
 
