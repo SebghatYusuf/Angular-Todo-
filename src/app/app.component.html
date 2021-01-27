@@ -1,4 +1,4 @@
-<h1>Hello World</h1>
+<!-- <h1>Hello World</h1>
 <h2>{{title}}</h2>
 <button (click)='alertName("Sebghat")'> Alert Name </button>
 
@@ -12,15 +12,34 @@
 </h1>
 
 <h2>Sign UP COMP</h2>
-<app-signup></app-signup>
+<app-signup></app-signup> -->
 
 <!-- Lecture #9 Important Events -->
 
-<h1>Important Events</h1>
+<!-- <h1>Important Events</h1>
 <button (click)="myEvent('this is click event')">Click ME</button>
-<br><br>
+<br><br> 
 
 <input type="text" #box (keyup.enter)="myEvent(box.value)">
 <br><br>
 
 <input type="text" #box1 (blur)="myEvent(box1.value)">
+
+<h1 
+(mouseover)="myEvent('mouseover')"
+style="background: skyblue;">Mouse Event</h1> -->
+
+
+<!-- <h1>Get Text Value in Angular</h1>
+<input type="text" #box value={{inputValue}} />
+<button (click)="getVal(box.value)">Get Value</button>
+<h4>{{inputValue}}</h4> -->
+<!-- end lect #10  -->
+
+<!-- lecture #11 -->
+<h1>property binding</h1>
+<input [value]=name [disabled]=disabledBox />
+<br><br>
+<input value={{name}} disabled={{disabledBox}} />
+<br><br>
+<button (click)="toggleBox()">TOGGLE BOX</button>

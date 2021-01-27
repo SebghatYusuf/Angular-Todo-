@@ -6,21 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Todo App';
+  name = "bruce"
+  disabledBox = true;
 
-  alertName(name: string) {
-    alert(name);
+  toggleBox() {
+    this.disabledBox = !this.disabledBox;
   }
 
-  obj = {
-    name: 'kelly',
-    age: 20,
-  };
-  siteUrl = window.location;
+  // title = 'Todo App';
 
-  // lect #9  
-  myEvent(event: any) {
-    console.log(event);
-  }
+  // alertName(name: string) {
+  //   alert(name);
+  // }
+
+  // obj = {
+  //   name: 'kelly',
+  //   age: 20,
+  // };
+  // siteUrl = window.location;
+
+  // // lect #9  
+  // myEvent(event: any) {
+  //   console.log(event);
+  // }
+
+  // inputValue = "";
+  // getVal(value: string) {
+  //   this.inputValue = value;
+  // }
 
 }
