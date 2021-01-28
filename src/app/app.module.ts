@@ -7,6 +7,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     UsersModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
