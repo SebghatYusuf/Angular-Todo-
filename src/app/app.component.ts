@@ -7,14 +7,28 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  getValues(values : any){
-    console.log(values)
+  // getValues(values : any){
+  //   console.log(values)
+  color = 'yellow'
+  err = true;
+  updateColor() {
+    if (this.color === 'green') {
+      this.color = 'yellow';
+      return;
+    }
+    this.color = 'green';
+
   }
+  toggleError(){
+    this.err = !this.err
+  }
+
+  // }
   // name = 'mohammad';
-  
+
   // color = 'blue';
-  
-  
+
+
   // show = 'blue';
   // toggleShow() {
   //   this.show === '' ? this.show = 'yes' : this.show = '';
