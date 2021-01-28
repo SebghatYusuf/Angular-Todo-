@@ -6,12 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  show = 'blue';
 
-
-  toggleShow() {
-    this.show === '' ? this.show = 'yes' : this.show = '';
+  getValues(values : any){
+    console.log(values)
   }
+  // name = 'mohammad';
+  
+  // color = 'blue';
+  
+  
+  // show = 'blue';
+  // toggleShow() {
+  //   this.show === '' ? this.show = 'yes' : this.show = '';
+  // }
 
   // name = "bruce"
   // disabledBox = true;

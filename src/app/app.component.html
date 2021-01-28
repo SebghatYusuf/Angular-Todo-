@@ -65,7 +65,7 @@ style="background: skyblue;">Mouse Event</h1> -->
   <h2>else BLOCK</h2>
 </ng-template>
 <button (click)="toggleShow()">Toggle</button> -->
-
+<!-- 
 <ng-template [ngIf]="show=='red' ">
   <h2 style="color: red;">Red</h2>
 </ng-template>
@@ -74,4 +74,46 @@ style="background: skyblue;">Mouse Event</h1> -->
 </ng-template>
 <ng-template [ngIf]="show=='green' ">
   <h2 style="color: green;">Green</h2>
-</ng-template>
+</ng-template> -->
+
+
+<!-- Start LECTURE 13 SWITCH CASE -->
+<!-- <H1>switch in angular</H1>
+<div [ngSwitch]="color">
+  <h2 style="color: red;" *ngSwitchCase="'red'">Red</h2>
+  <h2 style="color: blue;" *ngSwitchCase="'blue'">blue</h2>
+  <h2 style="color: green;" *ngSwitchCase="'green'">green</h2>
+  <h2 style="color: black;" *ngSwitchCase="'black'">black</h2>
+  <h2 style="color: gray;" *ngSwitchDefault>gray</h2>
+
+</div> -->
+
+<!-- <h2>Switch Khan</h2>
+<div [ngSwitch]="name">
+  <h4 style="color: blueviolet;" *ngSwitchCase="'khan'"> HELLO KHAN, YOU'RE NOW CONNECTED.</h4>
+  <h4 style="color: blueviolet;" *ngSwitchCase="'mohammad'"> HELLO MOHAMMAD, YOU CANT LOG IN RIGHT NOW.</h4>
+
+
+</div> -->
+
+
+<!-- Lecture #14 FOR LOOP -->
+
+<!-- <ul>
+  <li *ngFor=" let item of collection">
+    {{item}}
+  </li>
+</ul> -->
+
+<!-- Lecture #15 Forms  -->
+<form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm)">
+  <input type="text" name='username' ngModel placeholder="enter user name">
+  <br><br>
+  <input type="text" name='age' ngModel placeholder="enter user age">
+  <br><br>
+  <input type="text" name='address' ngModel placeholder="enter user address">
+  <br><br>
+  <!-- <input type="submit" value="Submit"> -->
+  <!-- <button> Get User Values </button> -->
+  <button type="submit">Submit</button>
+</form>
