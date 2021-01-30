@@ -152,4 +152,4 @@ style="background: skyblue;">Mouse Event</h1> -->
 
 <!-- lecture #20 pass data arent to child   -->
 
-<app-users [hero]="data" [moreData] = "moreData"></app-users>
+<app-users [hero]="data" [moreData] = "moreData" (parentFunction)="parentFunction($event)"></app-users>

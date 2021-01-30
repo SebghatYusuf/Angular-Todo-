@@ -46,9 +46,12 @@ export class AppComponent {
     age: 22,
   };
   moreData = {
-    test: "Angular"
+    angular: "Angular"
   }
 
+  parentFunction(data: any){
+    console.log(data);
+  }
 
 
 
