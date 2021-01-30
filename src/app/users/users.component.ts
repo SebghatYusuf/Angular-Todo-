@@ -8,10 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UsersComponent implements OnInit {
 
   @Input() hero: any;
+  @Input() moreData: any;
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.hero);
+    console.log(this.moreData);
   }
 
 }

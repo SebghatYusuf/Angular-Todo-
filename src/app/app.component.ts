@@ -45,6 +45,9 @@ export class AppComponent {
     name: "SEBGHAT",
     age: 22,
   };
+  moreData = {
+    test: "Angular"
+  }
 
 
 
