@@ -39,6 +39,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
+
+  data = {
+    name: "SEBGHAT",
+    age: 22,
+  };
+
+
+
+
+
+
+
   // getValues(values : any){
   // //   console.log(values)
   // color = 'yellow'
