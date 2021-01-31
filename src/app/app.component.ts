@@ -33,21 +33,40 @@ import { UsersService } from './users.service';
 //   message: 'This is a dark alert',
 // }
 // ];
+
+interface dataType {
+  name: string,
+  age: number,
+  educated: boolean,
+
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = '';
-  data = <any>[];
-  constructor(user: UsersService) {
-    user.getData().subscribe(data => {
-      this.data = data;
-    });
-    // let data = user.getData();
-    // this.name = data.name;
+
+
+  getData() {
+    let data: dataType = {
+      name: 'Sebghatullah Yusuf',
+      age: 22,
+      educated: true,
+    }
+    return data;
   }
+
+
+  // name = '';
+  // data = <any>[];
+  // constructor(user: UsersService) {
+  //   user.getData().subscribe(data => {
+  //     this.data = data;
+  //   });
+  //   // let data = user.getData();
+  //   // this.name = data.name;
+  // }
 
 
 
