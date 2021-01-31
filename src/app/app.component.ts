@@ -39,14 +39,15 @@ import { UsersService } from './users.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  name = '';
+  data = <any>[];
   constructor(user: UsersService) {
     user.getData().subscribe(data => {
-      console.log(data)
+      this.data = data;
     });
     // let data = user.getData();
     // this.name = data.name;
   }
-  name = '';
 
 
 
