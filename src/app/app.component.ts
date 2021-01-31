@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersService } from './users.service';
 
 
 // interface Alert {
@@ -38,24 +39,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-
-
-  data = {
-    name: "SEBGHAT",
-    age: 22,
-  };
-  moreData = {
-    angular: "Angular"
+  constructor(user: UsersService) {
+    console.warn(user.getData());
+    let data = user.getData();
+    this.name = data.name;
   }
-  name = "PETER Parker";
+  name = '';
 
-  parentFunction(data: any){
-    console.log(data);
-  }
-  today = new Date();
-  string = 'Hello World';
-  money = 100;
+
+
+
+
+  // data = {
+  //   name: "SEBGHAT",
+  //   age: 22,
+  // };
+  // moreData = {
+  //   angular: "Angular"
+  // }
+  // name = "PETER Parker";
+
+  // parentFunction(data: any){
+  //   console.log(data);
+  // }
+  // today = new Date();
+  // string = 'Hello World';
+  // money = 100;
 
 
 
