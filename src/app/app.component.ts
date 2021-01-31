@@ -48,14 +48,7 @@ interface dataType {
 export class AppComponent {
 
 
-  getData() {
-    let data: dataType = {
-      name: 'Sebghatullah Yusuf',
-      age: 22,
-      educated: true,
-    }
-    return data;
-  }
+  
 
 
   // name = '';

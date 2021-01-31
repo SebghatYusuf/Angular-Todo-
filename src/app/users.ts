@@ -1,4 +1,4 @@
-interface userDataType {
+export interface userDataType {
     name: string,
     age: number,
     single: boolean,
