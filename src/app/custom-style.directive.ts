@@ -1,10 +1,14 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appCustomStyle]'
 })
 export class CustomStyleDirective {
 
-  constructor() { }
+  constructor(private el: ElementRef) { 
+    el.nativeElement.style.color = 'blue'
+  }
+
+
 
 }
