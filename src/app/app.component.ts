@@ -48,10 +48,14 @@ export class AppComponent {
   moreData = {
     angular: "Angular"
   }
+  name = "PETER Parker";
 
   parentFunction(data: any){
     console.log(data);
   }
+  today = new Date();
+  string = 'Hello World';
+  money = 100;
 
 
 

@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import { UsersComponent } from './users/users.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { CustomStyleDirective } from './custom-style.directive';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { UsersComponent } from './users/users.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    UsersComponent
+    UsersComponent,
+    NotFoundPageComponent,
+    CustomStyleDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,3 @@
-
 <!-- <h1>Hello World</h1>
 <h2>{{title}}</h2>
 <button (click)='alertName("Sebghat")'> Alert Name </button>
@@ -107,9 +106,9 @@ style="background: skyblue;">Mouse Event</h1> -->
   <br><br>
   <input type="text" name='address' ngModel placeholder="enter user address">
   <br><br> -->
-  <!-- <input type="submit" value="Submit"> -->
-  <!-- <button> Get User Values </button> -->
-  <!-- <button type="submit">Submit</button> -->
+<!-- <input type="submit" value="Submit"> -->
+<!-- <button> Get User Values </button> -->
+<!-- <button type="submit">Submit</button> -->
 <!-- </form> -->
 <!-- 
 
@@ -151,5 +150,24 @@ style="background: skyblue;">Mouse Event</h1> -->
 <mat-slider thumbLabel tickInterval="1"></mat-slider> -->
 
 <!-- lecture #20 pass data arent to child   -->
+<!-- <h1>Pipe in Angular</h1> -->
+<!-- {{name |  uppercase}} <br>
+{{name | lowercase}} 
+{{today | date: 'fullDate'}}  -->
+<!-- {{string | slice:2:8  }}
+{{money | currency:'AF '}} -->
 
-<app-users [hero]="data" [moreData] = "moreData" (parentFunction)="parentFunction($event)"></app-users>
+
+
+<!-- <app-users [hero]="data" [moreData]="moreData" (parentFunction)="parentFunction($event)"></app-users> -->
+
+<!-- Lecture #25z -->
+<h2> Routing in Angular </h2>
+
+<ul>
+  <li><a routerLink="users">Users</a></li>
+  <li><a routerLink="footer">Footer</a></li>
+  <li><a routerLink="admin  ">Admin Page</a></li>
+</ul>
+
+<router-outlet></router-outlet>
