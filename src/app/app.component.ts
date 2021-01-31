@@ -40,9 +40,11 @@ import { UsersService } from './users.service';
 })
 export class AppComponent {
   constructor(user: UsersService) {
-    console.warn(user.getData());
-    let data = user.getData();
-    this.name = data.name;
+    user.getData().subscribe(data => {
+      console.log(data)
+    });
+    // let data = user.getData();
+    // this.name = data.name;
   }
   name = '';
 
