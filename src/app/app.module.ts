@@ -13,6 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { CustomStyleDirective } from './custom-style.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersTestModule } from './users-test/users-test.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatSliderModule,
     HttpClientModule,
+    UsersTestModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
