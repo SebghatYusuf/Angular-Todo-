@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +35,7 @@ import { UsersTestModule } from './users-test/users-test.module';
     MatSliderModule,
     HttpClientModule,
     UsersTestModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
