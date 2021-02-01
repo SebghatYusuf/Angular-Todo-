@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { UsersService } from './users.service';
 
 
@@ -46,9 +46,30 @@ interface dataType {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(
+    private vcr: ViewContainerRef,
+    private cfr: ComponentFactoryResolver,
+
+  ) {
+
+  }
+
+  async loadAdmin() {
+    this.vcr.clear();
+    const { AdminlitComponent } = await import('./adminlit/adminlit.component');
+    this.vcr.createComponent(
+      this.cfr.resolveComponentFactory(AdminlitComponent)
+    );
+  }
+  async loadUser() {
+    this.vcr.clear();
+    const { UserlistComponent } = await import('./userlist/userlist.component');
+    this.vcr.createComponent(
+      this.cfr.resolveComponentFactory(UserlistComponent)
+    );
+  }
 
 
-  
 
 
   // name = '';

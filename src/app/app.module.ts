@@ -15,6 +15,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { CustomStyleDirective } from './custom-style.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersTestModule } from './users-test/users-test.module';
+import { AdminlitComponent } from './adminlit/adminlit.component';
+import { UserlistComponent } from './userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { UsersTestModule } from './users-test/users-test.module';
     FooterComponent,
     UsersComponent,
     NotFoundPageComponent,
-    CustomStyleDirective
+    CustomStyleDirective,
+    AdminlitComponent,
+    UserlistComponent
   ],
   imports: [
     BrowserModule,
