@@ -33,12 +33,12 @@ import { UsersService } from './users.service';
 // }
 // ];
 
-interface dataType {
-  name: string,
-  age: number,
-  educated: boolean,
+// interface dataType {
+//   name: string,
+//   age: number,
+//   educated: boolean,
 
-}
+// }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

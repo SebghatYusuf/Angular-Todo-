@@ -41,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     UsersTestModule,
     AdminModule,
+    // NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
