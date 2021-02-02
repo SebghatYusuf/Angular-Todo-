@@ -46,6 +46,12 @@ import { UsersService } from './users.service';
 })
 export class AppComponent {
 
+  userData = {
+    'email': 'sebghatyusuf@yahoo.com',
+    'password': 'mypass',
+    'address': 'kabul'
+  }
+
 
   handleSubmit(data: any){
     console.warn(data);
