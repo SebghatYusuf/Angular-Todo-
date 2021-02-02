@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { UsersService } from './users.service';
 
@@ -45,18 +46,35 @@ import { UsersService } from './users.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
 
-  userData = {
-    'email': 'sebghatyusuf@yahoo.com',
-    'password': 'mypass',
-    'address': 'kabul'
+  });
+
+  collectData(){
+    console.warn(this.loginForm.value )
   }
 
 
-  handleSubmit(data: any){
-    console.warn(data);
 
-  }
+
+
+
+
+
+
+  // userData = {
+  //   'email': 'sebghatyusuf@yahoo.com',
+  //   'password': 'mypass',
+  //   'address': 'kabul'
+  // }
+
+
+  // handleSubmit(data: any){
+  //   console.warn(data);
+
+  // }
 
   // constructor(
   //   private vcr: ViewContainerRef,

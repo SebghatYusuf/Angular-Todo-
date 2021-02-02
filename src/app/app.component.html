@@ -300,3 +300,12 @@ name : {{name}} -->
   </form>
 
 </div> -->
+
+<!-- Lecture #43 - Reactive Forms -->
+
+
+<form class="m-4" [formGroup]="loginForm" (ngSubmit)="collectData()" >
+  <input type="text" name="name" id="name" formControlName="username" placeholder="enter name"> <br><br>
+  <input type="password" name="password" id="password" formControlName="password" placeholder="enter password"> <br><br>
+  <button type="submit" class="btn btn-outline-primary p-2">Login</button>
+</form>

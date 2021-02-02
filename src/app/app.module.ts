@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersTestModule } from './users-test/users-test.module';
 import { AdminlitComponent } from './adminlit/adminlit.component';
 import { UserlistComponent } from './userlist/userlist.component';
-import { FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,6 +41,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     UsersTestModule,
     AdminModule,
+    ReactiveFormsModule,
+
     // NgbModule.forRoot(),
   ],
   providers: [],
