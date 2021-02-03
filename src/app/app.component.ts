@@ -1,6 +1,10 @@
+import { AppServiceService } from './app-service.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { UsersService } from './users.service';
+import { parseJsonText } from 'typescript';
+import { ArrayType } from '@angular/compiler';
+
 
 // interface Alert {
 //   type: string;
@@ -40,22 +44,62 @@ import { UsersService } from './users.service';
 //   educated: boolean,
 
 // }
+
+
+interface responseType {
+  hits?: [],
+  total?: number,
+  totalHits?: number,
+
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+  images = <any>[]
+  response: responseType = {
+    hits: [],
+    total: 0,
+    totalHits: 0,
+  };
+  // loginForm = new FormGroup({
+  //   username: new FormControl(''),
+  //   password: new FormControl(''),
 
-  });
+  // });
 
-  collectData(){
-    console.warn(this.loginForm.value )
+  // collectData(){
+  //   console.warn(this.loginForm.value )
+  // }
+  constructor(private appservice: AppServiceService) {
+
   }
 
+  async loadImages() {
+    var images = this.appservice.getImages().subscribe(response => {
+      this.response = response;
+      console.log(this.response.hits);
+      this.images = this.response.hits;
+    });
+    // this.images = this.response.hits;
+
+  }
+
+  viewPhoto(photo: any) {
+    window.open(photo?.largeImageURL, '_blank')
+    console.warn(photo);
+  }
+
+  handleSubmit(value: any) {
+    this.images = [];
+    this.appservice.search(value?.search).subscribe(response => {
+      this.response = response;
+      this.images = this.response.hits;
+      console.log(response)
+    });
+  }
 
 
 

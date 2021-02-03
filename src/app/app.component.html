@@ -302,10 +302,26 @@ name : {{name}} -->
 </div> -->
 
 <!-- Lecture #43 - Reactive Forms -->
-
+<!-- 
 
 <form class="m-4" [formGroup]="loginForm" (ngSubmit)="collectData()" >
   <input type="text" name="name" id="name" formControlName="username" placeholder="enter name"> <br><br>
   <input type="password" name="password" id="password" formControlName="password" placeholder="enter password"> <br><br>
   <button type="submit" class="btn btn-outline-primary p-2">Login</button>
+</form> -->
+
+
+<!-- gettings photos -->
+
+<form #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
+  <div class="form-group col-sm-6 m-5">
+    <input type="text" name="search" ngModel class="form-control" id="search" placeholder="Enter to search....">
+    <button class="btn btn-warning" type="submit">Search</button>
+  </div>
 </form>
+<!-- <button (click)="loadImages()" class="btn btn-outline-primary m-4 p-t">load images</button> -->
+<ul>
+  <li *ngFor="let item of images">
+    <img style="cursor: pointer;" src={{item.previewURL}} (click)="viewPhoto(item)" />
+  </li>
+</ul>
