@@ -45,7 +45,6 @@ import { ArrayType } from '@angular/compiler';
 
 // }
 
-
 interface responseType {
   hits?: [],
   total?: number,
@@ -81,6 +80,7 @@ export class AppComponent {
     var images = this.appservice.getImages().subscribe(response => {
       this.response = response;
       console.log(this.response.hits);
+      // this.images = response.hits;
       this.images = this.response.hits;
     });
     // this.images = this.response.hits;
