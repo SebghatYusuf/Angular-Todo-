@@ -312,16 +312,62 @@ name : {{name}} -->
 
 
 <!-- gettings photos -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Photo Search</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapsed d-flex align-content-between" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li> -->
 
-<form #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
-  <div class="form-group col-sm-6 m-5">
-    <input type="text" name="search" ngModel class="form-control" id="search" placeholder="Enter to search....">
-    <button class="btn btn-warning" type="submit">Search</button>
+
+      </ul>
+      <form class="d-flex" #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
+        <input type="text" name="search" ngModel class="form-control me-2" type="search" placeholder="Search"
+          aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
   </div>
-</form>
+</nav>
+
+<div class="container ">
+  <div class="row">
+
+    <div *ngFor="let item of images">
+
+      <div class="card shadow-lg border" style="width: 18rem; margin: 5px;">
+        <img style="cursor: pointer;" src={{item.previewURL}} (click)="viewPhoto(item)">
+        <div class="card-body">
+          <img class="rounded-circle border" src={{item.userImageURL}} width="40" height="40" />
+          <p>{{item.user}}</p>
+          <p class="card-text">
+            Downloads: {{item.downloads}} <br>
+            Favorites: {{item.favorites}}
+          </p>
+          <span *ngFor="let tag of item.tags?.split(',')">
+            <div class="badge bg-primary text-white ml-2 p-2">{{tag}}</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container mt-4 bg-light">
+  <div class="col-md-6">
+
+    <form>
+      <div class="form-group">
+        <input class="form-control" id="search"
+          placeholder="Enter a keyword to search....">
+        <button class="btn btn-outline-primary mt-3" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div> -->
 <!-- <button (click)="loadImages()" class="btn btn-outline-primary m-4 p-t">load images</button> -->
-<ul>
-  <li *ngFor="let item of images">
-    <img style="cursor: pointer;" src={{item.previewURL}} (click)="viewPhoto(item)" />
-  </li>
-</ul>
