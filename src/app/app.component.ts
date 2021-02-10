@@ -73,31 +73,48 @@ export class AppComponent {
   //   console.warn(this.loginForm.value )
   // }
   constructor(private appservice: AppServiceService) {
-    this.loadImages();
+    // this.loadImages();
+  }
+  loading = false;
+  showImage = true;
+  showingImage = <any>{};
+
+
+  toggleShow() {
+    this.showImage = !this.showImage;
   }
 
   async loadImages() {
+    this.loading = true;
     var images = this.appservice.getImages().subscribe(response => {
       this.response = response;
+      // console.log(response)
+
       console.log(this.response.hits);
       // this.images = response.hits;
       this.images = this.response.hits;
+      this.loading = false;
     });
     // this.images = this.response.hits;
 
   }
 
   viewPhoto(photo: any) {
-    window.open(photo?.largeImageURL, '_blank')
+
+    this.showingImage = { url: photo.largeImageURL }
+    // window.open(photo?.largeImageURL, '_blank')
     console.warn(photo);
   }
 
-  handleSubmit(value: any) {
+  handleSubmit(value: any = undefined) {
     this.images = [];
-    this.appservice.search(value?.search).subscribe(response => {
+    console.log('handle submit called', value)
+    this.loading = true;
+    let search = value?.search ? value.search : value;
+    this.appservice.search(search).subscribe(response => {
       this.response = response;
       this.images = this.response.hits;
-      console.log(response)
+      this.loading = false;
     });
   }
 
