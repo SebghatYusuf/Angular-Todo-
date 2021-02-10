@@ -73,7 +73,7 @@ export class AppComponent {
   //   console.warn(this.loginForm.value )
   // }
   constructor(private appservice: AppServiceService) {
-
+    this.loadImages();
   }
 
   async loadImages() {
