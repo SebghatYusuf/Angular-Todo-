@@ -329,11 +329,16 @@ name : {{name}} -->
     <img src="../assets/eclipse.svg" />
   </div>
 </ng-template>
-
 <ng-template #showImages>
-  <div *ngIf="showImage" class="fixed z-20 bg-white w-100 shadow-md text-center">
+
+  <div *ngIf="showImage" style="z-index: 100; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;" class="absolute z-100 text-center">
+    <div class="block" style="display: flex; justify-content:center; align-items: center;">
+      <div (click)="toggleShow()" class="fixed bg-black opacity-40" style="height: 100vh; width: 100vw;">
+      </div>
+      <img class="absolute" src={{showingImage.url}} />
+    </div>
   </div>
-  <div class="bg-blue-400">
+  <div class="bg-blue-400 z-0">
     <div class="h-16"></div>
     <div
       class="px-4 py-4 md:px-12 font-sans grid grid-cols-1 place-items-auto place-content-start  sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-2 md:gap-12 ">

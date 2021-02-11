@@ -76,7 +76,7 @@ export class AppComponent {
     this.loadImages();
   }
   loading = false;
-  showImage = true;
+  showImage = false;
   showingImage = <any>{};
 
 
@@ -101,7 +101,8 @@ export class AppComponent {
 
   viewPhoto(photo: any) {
 
-    this.showingImage = { url: photo.largeImageURL }
+    this.showingImage = { url: photo.previewURL }
+    this.showImage = true;
     // window.open(photo?.largeImageURL, '_blank')
     console.warn(photo);
   }
