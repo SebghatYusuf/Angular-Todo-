@@ -325,22 +325,22 @@ name : {{name}} -->
 
 </div>
 <ng-template #showLoading>
-  <div class="h-100 bg-indigo-500">
-    Loading...
+  <div class="h-100 bg-indigo-500 flex flex-auto items-center justify-center ">
+    <img src="../assets/eclipse.svg" />
   </div>
 </ng-template>
 
 <ng-template #showImages>
+  <div *ngIf="showImage" class="fixed z-20 bg-white w-100 shadow-md text-center">
+  </div>
   <div class="bg-blue-400">
-    <div class="h-10"></div>
+    <div class="h-16"></div>
     <div
-      class="px-4 py-4 md:px-12 font-sans grid grid-cols-1 place-items-auto place-content-start  sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-12 ">
+      class="px-4 py-4 md:px-12 font-sans grid grid-cols-1 place-items-auto place-content-start  sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-2 md:gap-12 ">
       <div *ngFor="let item of images">
         <div class="card">
           <img class="rounded cursor-pointer" src={{item.previewURL}} (click)="viewPhoto(item)">
-          <div class="p-2">
-            <img class="rounded-full" src={{item.userImageURL}} width="40" height="40" />
-            <p>{{item.user}}</p>
+          <div class="p-2 hidden sm:inline-block md:inline-block xl:inline-block">
             <div>
               <span class="flex justify-between">
                 <span> <i class="fa fa-download"></i> {{item.downloads}}</span>
@@ -348,35 +348,9 @@ name : {{name}} -->
               </span>
             </div>
           </div>
-          <div class="flex flex-auto flex-wrap">
-            <div class="m-2" *ngFor="let tag of item.tags?.split(',')">
-              <span class="p-1 text-md rounded shadow-md bg-indigo-500 text-white uppercase cursor-pointer"
-                (click)="handleSubmit(tag)">{{tag}}</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-
-    <div class="fixed bg-black- bg-opacity-50 h-full">
-
-    </div>
   </div>
+
 </ng-template>
-
-
-
-
-<!-- <div class="container mt-4 bg-light">
-  <div class="col-md-6">
-
-    <form>
-      <div class="form-group">
-        <input class="form-control" id="search"
-          placeholder="Enter a keyword to search....">
-        <button class="btn btn-outline-primary mt-3" type="submit">Search</button>
-      </div>
-    </form>
-  </div>
-</div> -->
-<!-- <button (click)="loadImages()" class="btn btn-outline-primary m-4 p-t">load images</button> -->
