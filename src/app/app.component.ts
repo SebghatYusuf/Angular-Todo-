@@ -73,10 +73,10 @@ export class AppComponent {
   //   console.warn(this.loginForm.value )
   // }
   constructor(private appservice: AppServiceService) {
-    // this.loadImages();
+    this.loadImages();
   }
   loading = false;
-  showImage = true;
+  showImage = false;
   showingImage = <any>{};
 
 
@@ -102,6 +102,7 @@ export class AppComponent {
   viewPhoto(photo: any) {
 
     this.showingImage = { url: photo.largeImageURL }
+    this.showImage = true;
     // window.open(photo?.largeImageURL, '_blank')
     console.warn(photo);
   }
