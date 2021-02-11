@@ -1,3 +1,4 @@
+
 <!-- gettings photos -->
 <nav class="fixed z-20 bg-white w-100 shadow-md text-center">
   <form class="font-sans font text-xl py-2 " #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
@@ -28,10 +29,7 @@
           <span style="font-size:6em;" class="visually-hidden"></span>
         </div>
       </div>
-      <div
-        style="display:flex; justify-content: center; align-items: center; width: 640px; height:800px; position: fixed;">
-        <img class="" src={{showingImage.url}} />
-      </div>
+      <img class="absolute" src={{showingImage.url}} />
     </div>
   </div>
   <div class="bg-blue-400 z-0">
@@ -375,3 +373,4 @@ name : {{name}} -->
   <input type="password" name="password" id="password" formControlName="password" placeholder="enter password"> <br><br>
   <button type="submit" class="btn btn-outline-primary p-2">Login</button>
 </form> -->
+
