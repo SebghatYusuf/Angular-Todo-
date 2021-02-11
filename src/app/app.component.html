@@ -1,3 +1,67 @@
+
+<!-- gettings photos -->
+<nav class="fixed z-20 bg-white w-100 shadow-md text-center">
+  <form class="font-sans font text-xl py-2 " #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
+    <input type="text" name="search" ngModel
+      class="focus:outline-none py-1 px-2 border-4 border-light-blue-500 border-opacity-25" type="search"
+      placeholder="Search" aria-label="Search">
+    <button class="px-3 py-2 m-1 bg-indigo-500 rounded-md margin-auto text-white ml-2 hover:cursor"
+      type="submit">Search</button>
+  </form>
+</nav>
+<div *ngIf="loading;then showLoading else showImages">
+
+</div>
+<ng-template #showLoading>
+  <div class="h-100 bg-indigo-500 flex flex-auto items-center justify-center ">
+    <img src="../assets/eclipse.svg" />
+  </div>
+</ng-template>
+<ng-template #showImages>
+
+  <div *ngIf="showImage"
+    style="z-index: 100; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"
+    class="absolute z-100 text-center">
+    <div class="block" style="display: flex; justify-content:center; align-items: center;">
+      <div (click)="toggleShow()" class="fixed bg-black opacity-40"
+        style="display: flex; height: 100vh; width: 100vw; justify-content: center; align-items: center;">
+        <div class="spinner-border text-primary opacity-100" role="status">
+          <span style="font-size:6em;" class="visually-hidden"></span>
+        </div>
+      </div>
+      <img class="absolute" src={{showingImage.url}} />
+    </div>
+  </div>
+  <div class="bg-blue-400 z-0">
+    <div class="h-16"></div>
+    <div
+      class="px-4 py-4 md:px-12 font-sans grid grid-cols-1 place-items-auto place-content-start  sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-2 md:gap-12 ">
+      <div *ngFor="let item of images">
+        <div class="card">
+          <img class="rounded cursor-pointer" src={{item.previewURL}} (click)="viewPhoto(item)">
+          <div class="p-2 hidden sm:inline-block md:inline-block xl:inline-block">
+            <div>
+              <span class="flex justify-between">
+                <span> <i class="fa fa-download"></i> {{item.downloads}}</span>
+                <span> <i class="fa fa-heart text-red-500"></i> {{item.favorites}}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
+
+
+
+
+
+
+
+
 <!-- <h1>Hello World</h1>
 <h2>{{title}}</h2>
 <button (click)='alertName("Sebghat")'> Alert Name </button>
@@ -310,52 +374,3 @@ name : {{name}} -->
   <button type="submit" class="btn btn-outline-primary p-2">Login</button>
 </form> -->
 
-
-<!-- gettings photos -->
-<nav class="fixed z-20 bg-white w-100 shadow-md text-center">
-  <form class="font-sans font text-xl py-2 " #imageForm="ngForm" (ngSubmit)="handleSubmit(imageForm.value)">
-    <input type="text" name="search" ngModel
-      class="focus:outline-none py-1 px-2 border-4 border-light-blue-500 border-opacity-25" type="search"
-      placeholder="Search" aria-label="Search">
-    <button class="px-3 py-2 m-1 bg-indigo-500 rounded-md margin-auto text-white ml-2 hover:cursor"
-      type="submit">Search</button>
-  </form>
-</nav>
-<div *ngIf="loading;then showLoading else showImages">
-
-</div>
-<ng-template #showLoading>
-  <div class="h-100 bg-indigo-500 flex flex-auto items-center justify-center ">
-    <img src="../assets/eclipse.svg" />
-  </div>
-</ng-template>
-<ng-template #showImages>
-
-  <div *ngIf="showImage" style="z-index: 100; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;" class="absolute z-100 text-center">
-    <div class="block" style="display: flex; justify-content:center; align-items: center;">
-      <div (click)="toggleShow()" class="fixed bg-black opacity-40" style="height: 100vh; width: 100vw;">
-      </div>
-      <img class="absolute" src={{showingImage.url}} />
-    </div>
-  </div>
-  <div class="bg-blue-400 z-0">
-    <div class="h-16"></div>
-    <div
-      class="px-4 py-4 md:px-12 font-sans grid grid-cols-1 place-items-auto place-content-start  sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-2 md:gap-12 ">
-      <div *ngFor="let item of images">
-        <div class="card">
-          <img class="rounded cursor-pointer" src={{item.previewURL}} (click)="viewPhoto(item)">
-          <div class="p-2 hidden sm:inline-block md:inline-block xl:inline-block">
-            <div>
-              <span class="flex justify-between">
-                <span> <i class="fa fa-download"></i> {{item.downloads}}</span>
-                <span> <i class="fa fa-heart text-red-500"></i> {{item.favorites}}</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</ng-template>

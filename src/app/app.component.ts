@@ -101,7 +101,7 @@ export class AppComponent {
 
   viewPhoto(photo: any) {
 
-    this.showingImage = { url: photo.previewURL }
+    this.showingImage = { url: photo.largeImageURL }
     this.showImage = true;
     // window.open(photo?.largeImageURL, '_blank')
     console.warn(photo);
